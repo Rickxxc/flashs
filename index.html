@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flash Cards Colaborativos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Flash Cards Colaborativos</h1>
+        
+        <div class="stats">
+            <p>Total de Cards: <span id="totalCards">0</span> (<span id="defaultCards">0</span> padrão, <span id="customCards">0</span> personalizados)</p>
+        </div>
+
+        <div class="form-container">
+            <div class="form-group">
+                <label for="subject">Matéria:</label>
+                <input type="text" id="subject" required>
+            </div>
+            <div class="form-group">
+                <label for="topic">Assunto:</label>
+                <input type="text" id="topic" required>
+            </div>
+            <div class="form-group">
+                <label for="question">Pergunta:</label>
+                <textarea id="question" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="answer">Resposta:</label>
+                <textarea id="answer" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="mnemonic">Mnemônica (opcional):</label>
+                <textarea id="mnemonic"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="contributor">Seu nome (para contribuição):</label>
+                <input type="text" id="contributor">
+            </div>
+            <div class="button-group">
+                <button onclick="addCard()">Adicionar Card Local</button>
+                <button class="contribute-btn" onclick="contributeCard()">Contribuir para GitHub</button>
+            </div>
+        </div>
+
+        <div class="filters">
+            <input type="text" id="search" class="search-input" placeholder="Pesquisar cards...">
+            <button class="filter-btn" onclick="filterByType('all')">Todos</button>
+            <button class="filter-btn" onclick="filterByType('default')">Padrão</button>
+            <button class="filter-btn" onclick="filterByType('custom')">Personalizados</button>
+        </div>
+
+        <div class="cards-container" id="cardsContainer"></div>
+
+        <div class="github-link">
+            <p>Esta é uma aplicação open-source! Veja o código e contribua em:</p>
+            <a href="https://github.com/seu-usuario/flash-cards" target="_blank">github.com/seu-usuario/flash-cards</a>
+        </div>
+    </div>
+
+    <script src="cards-data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
